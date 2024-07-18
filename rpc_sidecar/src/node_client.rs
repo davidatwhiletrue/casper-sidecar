@@ -473,6 +473,9 @@ pub enum InvalidTransactionOrDeploy {
     /// Invalid transaction kind
     #[error("invalid transaction kind")]
     InvalidTransactionInvalidTransactionKind,
+    /// Invalid transaction gas price tolerance
+    #[error("Invalid transaction gas price tolerance")]
+    InvalidTransactionGasPriceToleranceOutOfRange,
 }
 
 impl From<ErrorCode> for InvalidTransactionOrDeploy {
@@ -580,6 +583,7 @@ impl From<ErrorCode> for InvalidTransactionOrDeploy {
             ErrorCode::InvalidTransactionInvalidTransactionKind => {
                 Self::InvalidTransactionInvalidTransactionKind
             }
+            ErrorCode::InvalidTransactionGasPriceTolerance => Self::InvalidTransactionGasPriceToleranceOutOfRange,
             ErrorCode::InvalidTransactionUnspecified => Self::TransactionUnspecified,
             ErrorCode::InvalidTransactionOrDeployUnspecified => {
                 Self::TransactionOrDeployUnspecified
@@ -712,6 +716,7 @@ impl Error {
                 | ErrorCode::DeployMissingModuleBytes
                 | ErrorCode::InvalidTransactionEntryPointCannotBeCall
                 | ErrorCode::InvalidTransactionInvalidTransactionKind
+                | ErrorCode::InvalidTransactionGasPriceTolerance
                 | ErrorCode::InvalidTransactionUnspecified
                 | ErrorCode::InvalidTransactionOrDeployUnspecified),
             ) => Self::InvalidTransaction(InvalidTransactionOrDeploy::from(err)),
