@@ -471,7 +471,7 @@ dependencies = [
 [[package]]
 name = "casper-binary-port"
 version = "1.0.0"
-source = "git+https://github.com/casper-network/casper-node.git?branch=feat-2.0#8e89ca84085baba22817627cac06ee5530a42cc2"
+source = "git+https://github.com/casper-network/casper-node.git?branch=feat-2.0#ef376e6169a8956ef2ebcf725b0a8e6486ff2dea"
 dependencies = [
  "bincode",
  "bytes",
@@ -676,7 +676,7 @@ dependencies = [
 [[package]]
 name = "casper-types"
 version = "5.0.0"
-source = "git+https://github.com/casper-network/casper-node.git?branch=feat-2.0#8e89ca84085baba22817627cac06ee5530a42cc2"
+source = "git+https://github.com/casper-network/casper-node.git?branch=feat-2.0#ef376e6169a8956ef2ebcf725b0a8e6486ff2dea"
 dependencies = [
  "base16",
  "base64 0.13.1",
@@ -5557,7 +5557,7 @@ version = "0.1.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf221c93e13a30d793f7645a0e7762c55d169dbb0a49671918a2319d289b10bb"
 dependencies = [
- "windows-sys 0.59.0",
+ "windows-sys 0.48.0",
 ]
 
 [[package]]
